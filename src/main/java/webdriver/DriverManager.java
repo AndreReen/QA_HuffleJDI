@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 public class DriverManager {
 
-    public static final WebDriver driver;
+    public static WebDriver driver;
     private static final String HEADLESS = "HEADLESS_BROWSER";
 
     private DriverManager() {
@@ -22,9 +22,9 @@ public class DriverManager {
             chromeOptions.addArguments(
                 "--no-sandbox",
                 "--ignore-certificate-errors");
-            if (Boolean.parseBoolean(System.getProperty(HEADLESS))) {
-                chromeOptions.addArguments("--disable-gpu", "--window-size=1920x1080", "--headless");
-            }
+//            if (Boolean.parseBoolean(System.getProperty(HEADLESS))) {
+            //                chromeOptions.addArguments("--disable-gpu", "--window-size=1920x1080", "--headless");
+            //            }
             driver = new ChromeDriver(chromeOptions);
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         }
