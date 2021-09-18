@@ -1,10 +1,10 @@
 @all
+@registration
 Feature: User registration
 
   As a Customer I want to be able to register on the site
   To have access to addition features
 
-  @registration
   Scenario Outline: User registers on site
 
     Given I open site
@@ -28,10 +28,5 @@ Feature: User registration
       | dr    | Alexey  | Nadenenko  | alexey_nadenenko1@hello.com | this password contains spaces |
       | mrs   | Makar   | By         | makar_by@hello.com          | pass1231!@#                   |
 
-  #valid titles
-  #mr
-  #mrs
-  #miss
-  #ms
-  #dr
-  #rev
+  #valid titles: mr, mrs, miss, ms, dr, rev
+

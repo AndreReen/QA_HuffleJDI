@@ -4,10 +4,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-    strict = true,
-    tags = {"@registration"},
-    features = {"src/test/resources"},
-    plugin = {"pretty", "html:/target/report/cucumber-report-general"}
+        features = {"src/test/resources"},
+        glue = {"steps", "hooks"},
+        plugin = {"pretty", "html:/target/report/cucumber-report-general"}
 )
 public class CucumberRunner {
 }

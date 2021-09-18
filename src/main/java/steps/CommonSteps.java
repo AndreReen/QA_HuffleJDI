@@ -67,22 +67,22 @@ public class CommonSteps {
     }
 
     @When("I perform login")
-    public static void performLogin(){
+    public static void performLogin() {
         helper.sendKeys(LoginPage.loginEmailField(), Config.getEnvVar("email"));
         helper.sendKeys(LoginPage.loginPasswordField(), Config.getEnvVar("password"));
         helper.click(LoginPage.loginButton());
     }
 
     @Then("I am on the page with {string} title")
-    public static void pageTitle(String expectedTitle){
+    public static void pageTitle(String expectedTitle) {
         helper.waitForPageUpdate();
-        Asserts.check(helper.getPageTitle().equals(expectedTitle) , "Hurray");
+        Asserts.check(helper.getPageTitle().equals(expectedTitle), "Hurray");
 
     }
 
     @Then("{string} message is displayed  on screen")
-    public static void displayedMessage(String expectedMessage){
-        DriverManager.driver.findElement(By.xpath("//*[text()[contains(.,'"+ expectedMessage+"')]]"));
+    public static void displayedMessage(String expectedMessage) {
+        DriverManager.driver.findElement(By.xpath("//*[text()[contains(.,'" + expectedMessage + "')]]"));
     }
 
 }

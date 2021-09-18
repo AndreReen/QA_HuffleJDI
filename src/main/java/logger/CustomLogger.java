@@ -45,15 +45,6 @@ public class CustomLogger {
         publish(Level.ERR, String.valueOf(message));
     }
 
-    //    public void error(final String message, final Exception e) {
-    //        publish(Level.ERR, message);
-    //        try {
-    //            throw new Exception(e);
-    //        } catch (Exception e1) {
-    //            e1.printStackTrace();
-    //        }
-    //    }
-
     private void publish(final Level level, final String message) {
         if (this.loggerLevel.ordinal() <= level.ordinal()) {
             StringBuilder stringBuilder = new StringBuilder();

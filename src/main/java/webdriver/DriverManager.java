@@ -20,11 +20,8 @@ public class DriverManager {
             WebDriverManager.chromedriver().setup();
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.addArguments(
-                "--no-sandbox",
-                "--ignore-certificate-errors");
-//            if (Boolean.parseBoolean(System.getProperty(HEADLESS))) {
-            //                chromeOptions.addArguments("--disable-gpu", "--window-size=1920x1080", "--headless");
-            //            }
+                    "--no-sandbox",
+                    "--ignore-certificate-errors");
             driver = new ChromeDriver(chromeOptions);
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         }
