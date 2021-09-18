@@ -18,7 +18,7 @@ public class Hook {
 
     @After
     public void tearDown() {
-        DriverManager.driver.quit();
-        DriverManager.driver = null;
+//        DriverManager.driver.quit();
+//        DriverManager.driver = null;
     }
 }

@@ -7,10 +7,6 @@ import webdriver.DriverManager;
 
 public class LoginPage {
 
-    public static WebElement registerButton(){
-        return DriverManager.driver.findElement(By.xpath("//button[@href='/ucstorefront/en/login']"));
-    }
-
     public static Select titleDropDown(){
         return new Select(DriverManager.driver.findElement(By.xpath("//select[@id='register.title']")));
     }
@@ -41,6 +37,18 @@ public class LoginPage {
 
     public static WebElement submitButton(){
         return DriverManager.driver.findElement(By.xpath("//button[@class='btn btn-default btn-block']"));
+    }
+
+    public static WebElement loginEmailField(){
+        return DriverManager.driver.findElement(By.xpath("//input[@id='j_username']"));
+    }
+
+    public static WebElement loginPasswordField(){
+        return DriverManager.driver.findElement(By.xpath("//input[@id='j_password']"));
+    }
+
+    public static WebElement loginButton(){
+        return DriverManager.driver.findElement(By.xpath("//button[@class='btn btn-primary btn-block']"));
     }
 
 }
