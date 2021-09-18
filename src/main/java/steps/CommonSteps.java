@@ -61,7 +61,7 @@ public class CommonSteps {
 
     @Then("I am on the page with {string} title")
     public static void pageTitle(String expectedTitle){
-        System.out.println(DriverManager.driver.getTitle());
+        helper.waitForPageUpdate();
         Asserts.check(helper.getPageTitle().equals(expectedTitle) , "Hurray");
 
     }

@@ -26,7 +26,7 @@ Feature: User registration
       | miss  | Petr    | Petrov     | petr_petrov@hello.com       | LetterPassword                |
       | rev   | Anderei | Reentovich | andrei_reentovich@hello.com | !@#$%^&*()-=                  |
       | dr    | Alexey  | Nadenenko  | alexey_nadenenko1@hello.com | this password contains spaces |
-      | mrs   | Makar   | By         | makar_by@hello.com          | short                         |
+      | mrs   | Makar   | By         | makar_by@hello.com          | pass1231!@#                   |
 
   #valid titles
   #mr
