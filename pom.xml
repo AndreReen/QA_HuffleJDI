@@ -12,6 +12,7 @@
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
     <webdrivermanager.version>5.0.0</webdrivermanager.version>
+    <cucumber-java.version>6.11.0</cucumber-java.version>
   </properties>
 
   <dependencies>
@@ -25,7 +26,7 @@
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-java</artifactId>
-      <version>6.11.0</version>
+      <version>${cucumber-java.version}</version>
     </dependency>
 
     <dependency>
@@ -40,11 +41,10 @@
       <artifactId>webdrivermanager</artifactId>
       <version>${webdrivermanager.version}</version>
     </dependency>
-
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-junit-platform-engine</artifactId>
-      <version>6.11.0</version>
+      <version>${cucumber-java.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
