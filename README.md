@@ -3,7 +3,7 @@
 Команда ПуффенЖDI
 
 ***
-Jenkins *Team43 *Project_43
+Jenkins Team43 Project_43
 ***
 Run locally with:
 mvn clean test -Dcucumber.filter.tags=@all
