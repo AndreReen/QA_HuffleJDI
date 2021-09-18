@@ -1,5 +1,6 @@
 @all
 @registration
+@positive
 Feature: User registration
 
   As a Customer I want to be able to register on the site
@@ -12,7 +13,11 @@ Feature: User registration
     And I select value "<TITLE>" from "titleDropDown" on "LoginPage"
     And I type "<NAME>" in "firstNameField" on "LoginPage"
     And I type "<LAST NAME>" in "lastNameField" on "LoginPage"
-    And I type "<EMAIL>" in "emailAddressField" on "LoginPage"
+    #And I type "<EMAIL>" in "emailAddressField" on "LoginPage"
+      # As we have no possibility to clean up created users after test
+        # custom step was added with randomEmail so the test would never fail
+          # due to account with the same email being left in DB
+    And I type Random EMAIL in "emailAddressField" on "LoginPage"
     And I type "<PASSWORD>" in "passwordField" on "LoginPage"
     And I type "<PASSWORD>" in "confirmPasswordField" on "LoginPage"
     And I click on "confirmCheckBox" on "LoginPage"

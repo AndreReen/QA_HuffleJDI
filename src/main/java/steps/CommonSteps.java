@@ -12,6 +12,7 @@ import pages.LoginPage;
 import webdriver.DriverManager;
 
 import java.lang.reflect.Method;
+import java.util.UUID;
 
 import static hooks.Hook.helper;
 
@@ -48,6 +49,20 @@ public class CommonSteps {
             Method method = c.getDeclaredMethod(element);
             elementToSendKeys = (WebElement) method.invoke(null);
             helper.sendKeys(elementToSendKeys, text);
+        } catch (ReflectiveOperationException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @When("I type Random EMAIL in {string} on {string}")
+    public static void set(String element, String page) {
+        String randomEmail = UUID.randomUUID().toString() +"@helloworld.com";
+        WebElement elementToSendKeys = null;
+        try {
+            Class<?> c = Class.forName("pages." + page);
+            Method method = c.getDeclaredMethod(element);
+            elementToSendKeys = (WebElement) method.invoke(null);
+            helper.sendKeys(elementToSendKeys, randomEmail);
         } catch (ReflectiveOperationException e) {
             e.printStackTrace();
         }
