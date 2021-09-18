@@ -1,6 +1,7 @@
 package webdriver;
 
 import java.util.NoSuchElementException;
+
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -16,15 +17,15 @@ public class WebDriverHelper {
     private final WebDriver driver;
 
     private static final String JS_AJAX_PROGRESS =
-        "var userWindow = window;"
-            + "var docReady = window.document.readyState == 'complete';"
-            + "var isJqueryComplete = typeof(userWindow.jQuery) != 'function' || userWindow.jQuery.active == 0;"
-            + "var isPrototypeComplete = typeof(userWindow.Ajax) != 'function' "
-            + "|| userWindow.Ajax.activeRequestCount == 0;"
-            + "var isDojoComplete = typeof(userWindow.dojo) != 'function' "
-            + "|| userWindow.dojo.io.XMLHTTPTransport.inFlight.length == 0;"
-            + "var result = docReady && isJqueryComplete && isPrototypeComplete && isDojoComplete;"
-            + "return result;";
+            "var userWindow = window;"
+                    + "var docReady = window.document.readyState == 'complete';"
+                    + "var isJqueryComplete = typeof(userWindow.jQuery) != 'function' || userWindow.jQuery.active == 0;"
+                    + "var isPrototypeComplete = typeof(userWindow.Ajax) != 'function' "
+                    + "|| userWindow.Ajax.activeRequestCount == 0;"
+                    + "var isDojoComplete = typeof(userWindow.dojo) != 'function' "
+                    + "|| userWindow.dojo.io.XMLHTTPTransport.inFlight.length == 0;"
+                    + "var result = docReady && isJqueryComplete && isPrototypeComplete && isDojoComplete;"
+                    + "return result;";
 
     public WebDriverHelper(WebDriver driver) {
         this.driver = driver;
@@ -60,7 +61,7 @@ public class WebDriverHelper {
     public void waitForElementToBeClickable(WebElement element) {
         try {
             new WebDriverWait(driver, TIMEOUT)
-                .until(ExpectedConditions.elementToBeClickable(element));
+                    .until(ExpectedConditions.elementToBeClickable(element));
         } catch (NoSuchElementException e) {
             //            log.info("Timeout exception when wait for element clickable");
         } finally {
@@ -72,7 +73,7 @@ public class WebDriverHelper {
     public void waitForElementIsVisible(WebElement element) {
         try {
             new WebDriverWait(driver, TIMEOUT)
-                .until(ExpectedConditions.visibilityOf(element));
+                    .until(ExpectedConditions.visibilityOf(element));
         } catch (org.openqa.selenium.NoSuchElementException e) {
             e.printStackTrace();
             //            log.info("Waiting element visible throw timeout");
