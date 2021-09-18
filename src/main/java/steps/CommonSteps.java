@@ -76,7 +76,7 @@ public class CommonSteps {
     @Then("I am on the page with {string} title")
     public static void pageTitle(String expectedTitle) {
         helper.waitForPageUpdate();
-        Asserts.check(helper.getPageTitle().equals(expectedTitle), "Hurray");
+        Asserts.check(helper.getPageTitle().equals(expectedTitle), "Booo");
 
     }
 
