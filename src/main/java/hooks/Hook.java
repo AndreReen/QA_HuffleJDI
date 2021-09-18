@@ -12,13 +12,12 @@ public class Hook {
     @Before
     public void setUp() {
         DriverManager.setupDriver();
-        DriverManager.driver.manage().window().maximize();
         helper = new WebDriverHelper(DriverManager.driver);
     }
 
     @After
     public void tearDown() {
-//        DriverManager.driver.quit();
+        DriverManager.driver.quit();
         DriverManager.driver = null;
     }
 }

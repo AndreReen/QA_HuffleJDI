@@ -20,8 +20,11 @@ public class DriverManager {
             WebDriverManager.chromedriver().setup();
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.addArguments(
+                    "--headless",
                     "--no-sandbox",
-                    "--ignore-certificate-errors");
+                    "--ignore-certificate-errors",
+                    "--window-size=1920,1080",
+                    "--start-maximized");
             driver = new ChromeDriver(chromeOptions);
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         }
