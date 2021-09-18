@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WebDriverHelper {
@@ -87,6 +88,17 @@ public class WebDriverHelper {
         try {
             waitForElementToBeClickable(element);
             element.click();
+        } catch (ElementClickInterceptedException e) {
+            //            log.info("Clicking element throw ne exception");
+        } finally {
+            //            log.info(LOGGER_INFO, "Click", driver.getCurrentUrl());
+            System.out.println("log");
+        }
+    }
+
+    public void selectFrom(Select element, String text) {
+        try {
+            element.selectByValue(text);
         } catch (ElementClickInterceptedException e) {
             //            log.info("Clicking element throw ne exception");
         } finally {

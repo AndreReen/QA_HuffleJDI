@@ -12,7 +12,8 @@ public class Hook {
     @Before
     public void setUp() {
         DriverManager.setupDriver();
-         helper = new WebDriverHelper(DriverManager.driver);
+        DriverManager.driver.manage().window().fullscreen();
+        helper = new WebDriverHelper(DriverManager.driver);
     }
 
     @After
